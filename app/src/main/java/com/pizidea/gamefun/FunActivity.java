@@ -5,13 +5,22 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.pizidea.gamefun.controllers.MainController;
+
 
 public class FunActivity extends ActionBarActivity {
+
+    private MainController mainController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun);
+
+        mainController = ((PizApplication)(getApplication())).getMainController();
+
+        mainController.doTask();
+
     }
 
 
