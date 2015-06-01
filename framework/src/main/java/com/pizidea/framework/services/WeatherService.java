@@ -2,6 +2,7 @@ package com.pizidea.framework.services;
 
 import com.pizidea.framework.beans.UserBean;
 import com.pizidea.framework.beans.WeatherBean;
+import com.pizidea.framework.beans.WeatherInfo;
 
 import retrofit.http.GET;
 import retrofit.http.POST;
@@ -16,7 +17,7 @@ public interface WeatherService {
     //http://www.weather.com.cn/adat/sk/101010100.html
 
     @GET("/adat/sk/101010100.html")
-    WeatherBean fetchWeather();
+    WeatherInfo fetchWeather();
 
     @POST("/user/{uid}")
     boolean modifyUserInfo(@Path("uid") int userId);

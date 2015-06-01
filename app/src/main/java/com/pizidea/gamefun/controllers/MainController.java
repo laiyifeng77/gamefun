@@ -47,7 +47,7 @@ public class MainController {
             public WeatherBean doInBackground() {
                 Log.i(TAG,"-----doInBackground");
                 ApiClient client = new ApiClient();
-                WeatherBean result = client.weatherService().fetchWeather();
+                WeatherBean result = client.weatherService().fetchWeather().getWeatherinfo();
                 return result;
             }
 
