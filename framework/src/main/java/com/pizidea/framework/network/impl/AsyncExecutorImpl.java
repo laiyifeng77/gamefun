@@ -6,9 +6,9 @@ import android.util.Log;
 
 import com.google.common.base.Preconditions;
 import com.pizidea.framework.consts.AppConfig;
-import com.pizidea.framework.network.BackgroundCallRunnable;
-import com.pizidea.framework.network.BackgroundExecutor;
-import com.pizidea.framework.network.NetworkCallRunnable;
+import com.pizidea.framework.network.AsyncExecutor;
+import com.pizidea.framework.network.BackgroundCallable;
+import com.pizidea.framework.network.NetworkCallable;
 
 import java.util.concurrent.ExecutorService;
 
@@ -18,34 +18,34 @@ import retrofit.RetrofitError;
  * desc your class
  * Created by yflai on 2015/5/31.
  */
-public class BackgroundExecutorImpl implements BackgroundExecutor {
+public class AsyncExecutorImpl implements AsyncExecutor {
 
     private static final Handler sHandler = new Handler(Looper.getMainLooper());
     private final ExecutorService mExecutorService;
 
-    public BackgroundExecutorImpl(ExecutorService executorService) {
+    public AsyncExecutorImpl(ExecutorService executorService) {
         mExecutorService = Preconditions.checkNotNull(executorService, "executorService cannot be null");
     }
 
 
     @Override
-    public <E> void execute(NetworkCallRunnable<E> runnable) {
+    public <E> void execute(NetworkCallable<E> runnable) {
         mExecutorService.execute(new NetworkRunner<>(runnable));
 
     }
 
     @Override
-    public <E> void execute(BackgroundCallRunnable<E> runnable) {
+    public <E> void execute(BackgroundCallable<E> runnable) {
         mExecutorService.execute(new BackgroundCallRunner<>(runnable));
 
     }
 
 
     private class BackgroundCallRunner<E> implements Runnable{
-        private final BackgroundCallRunnable<E> mBackgroundCallRunnable;
+        private final BackgroundCallable<E> mBackgroundCallable;
 
-        BackgroundCallRunner(BackgroundCallRunnable<E> runnable) {
-            mBackgroundCallRunnable = runnable;
+        BackgroundCallRunner(BackgroundCallable<E> runnable) {
+            mBackgroundCallable = runnable;
         }
 
         @Override
@@ -55,11 +55,11 @@ public class BackgroundExecutorImpl implements BackgroundExecutor {
             sHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mBackgroundCallRunnable.onPreCall();
+                    mBackgroundCallable.onPreCall();
                 }
             });
 
-            E result = mBackgroundCallRunnable.runAsync();//run in background thread
+            E result = mBackgroundCallable.runAsync();//run in background thread
 
             sHandler.post(new ResultCallback(result));
 
@@ -77,7 +77,7 @@ public class BackgroundExecutorImpl implements BackgroundExecutor {
 
             @Override
             public void run() {
-                mBackgroundCallRunnable.onPostCall(mResult);
+                mBackgroundCallable.onPostCall(mResult);
             }
         }
 
@@ -89,10 +89,10 @@ public class BackgroundExecutorImpl implements BackgroundExecutor {
      * @param <E>
      */
     private class NetworkRunner<E> implements Runnable{
-        private final NetworkCallRunnable<E> mNetworkCallRunnable;
+        private final NetworkCallable<E> mNetworkCallable;
 
-        NetworkRunner(NetworkCallRunnable<E> runnable){
-            mNetworkCallRunnable = runnable;
+        NetworkRunner(NetworkCallable<E> runnable){
+            mNetworkCallable = runnable;
         }
 
         @Override
@@ -102,7 +102,7 @@ public class BackgroundExecutorImpl implements BackgroundExecutor {
             sHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mNetworkCallRunnable.onPreCall();
+                    mNetworkCallable.onPreCall();
                 }
             });
 
@@ -110,7 +110,7 @@ public class BackgroundExecutorImpl implements BackgroundExecutor {
             RetrofitError retrofitError = null;
 
             try {
-                result = mNetworkCallRunnable.doInBackground();
+                result = mNetworkCallable.doInBackground();
             } catch (RetrofitError re) {
                 retrofitError = re;
                 if (AppConfig.DEBUG) {
@@ -137,11 +137,11 @@ public class BackgroundExecutorImpl implements BackgroundExecutor {
             @Override
             public void run() {
                 if (mResult != null) {
-                    mNetworkCallRunnable.onSuccess(mResult);
+                    mNetworkCallable.onSuccess(mResult);
                 } else if (mRetrofitError != null) {
-                    mNetworkCallRunnable.onError(mRetrofitError);
+                    mNetworkCallable.onError(mRetrofitError);
                 }
-                mNetworkCallRunnable.onPostCall();//always call this
+                mNetworkCallable.onPostCall();//always call this
             }
         }
 

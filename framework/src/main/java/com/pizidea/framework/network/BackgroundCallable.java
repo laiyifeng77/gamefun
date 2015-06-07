@@ -3,7 +3,7 @@ package com.pizidea.framework.network;
 /**
  * Created by Administrator on 2015/5/30.
  */
-public interface BackgroundCallRunnable<E> {
+public interface BackgroundCallable<E> {
 
     public void onPreCall();
 

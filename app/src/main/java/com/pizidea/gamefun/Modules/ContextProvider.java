@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 
 import com.google.common.base.Preconditions;
+import com.pizidea.gamefun.qualifiers.ApplicationContext;
+import com.pizidea.gamefun.qualifiers.FileDirectory;
 
 import java.io.File;
 
@@ -29,7 +31,7 @@ public class ContextProvider {
     }
 
     @Provides
-    //@ApplicationContext
+    @ApplicationContext
     public Context provideApplicationContext() {
         return mApplicationContext;
     }
@@ -39,10 +41,8 @@ public class ContextProvider {
         return AccountManager.get(mApplicationContext);
     }
 
-//    @Provides @FilesDirectory
-//    public File providePrivateFileDirectory() {
-//        return mApplicationContext.getFilesDir();
-//    }
+    @Provides @FileDirectory
+    public File providePrivateFileDirectory() {  return mApplicationContext.getFilesDir(); }
 
     @Provides @Singleton
     public AssetManager provideAssetManager() {
@@ -53,4 +53,5 @@ public class ContextProvider {
     public AlarmManager provideAlarmManager() {
         return (AlarmManager) mApplicationContext.getSystemService(Context.ALARM_SERVICE);
     }
+
 }

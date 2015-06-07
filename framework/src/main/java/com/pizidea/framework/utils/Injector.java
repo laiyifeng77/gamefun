@@ -1,4 +1,4 @@
-package com.pizidea.framework.injector;
+package com.pizidea.framework.utils;
 
 /**
  * desc your class

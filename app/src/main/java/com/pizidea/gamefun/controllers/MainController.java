@@ -4,8 +4,8 @@ import android.util.Log;
 
 import com.google.common.base.Preconditions;
 import com.pizidea.framework.beans.WeatherBean;
-import com.pizidea.framework.network.BackgroundExecutor;
-import com.pizidea.framework.network.NetworkCallRunnable;
+import com.pizidea.framework.network.AsyncExecutor;
+import com.pizidea.framework.network.NetworkCallable;
 import com.pizidea.framework.qualifiers.GeneralPurpose;
 import com.pizidea.framework.services.ApiClient;
 
@@ -22,22 +22,22 @@ import retrofit.RetrofitError;
 public class MainController {
     private static final String TAG = MainController.class.getSimpleName();
 
-    private final BackgroundExecutor mExecutor;
+    private final AsyncExecutor mExecutor;
 
 
     @Inject
-    public MainController(@GeneralPurpose BackgroundExecutor executor){
+    public MainController(@GeneralPurpose AsyncExecutor executor){
         mExecutor = Preconditions.checkNotNull(executor, "executor cannot be null");
     }
 
-    private <E> void execTask(NetworkCallRunnable<E> task){
+    private <E> void execTask(NetworkCallable<E> task){
         //注入这个task
         mExecutor.execute(task);
 
     }
 
     public void doTask(){
-        execTask(new NetworkCallRunnable<WeatherBean>() {
+        execTask(new NetworkCallable<WeatherBean>() {
             @Override
             public void onPreCall() {
                 Log.i(TAG,"-----onPreCall");

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
 
-import com.pizidea.framework.injector.Injector;
+import com.pizidea.framework.utils.Injector;
 import com.pizidea.gamefun.Modules.ApplicationModule;
 import com.pizidea.gamefun.Modules.ContextProvider;
 import com.pizidea.gamefun.constants.AppConfig;
@@ -47,7 +47,7 @@ public class PizApplication extends Application implements Injector{
         }
 
         mObjectGraph = ObjectGraph.create(
-                //new ContextProvider(this),
+                new ContextProvider(this),
                 new ApplicationModule()
                 //new ViewUtilProvider(),
                 //new TaskProvider(),
