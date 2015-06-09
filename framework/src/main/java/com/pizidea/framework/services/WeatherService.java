@@ -4,6 +4,7 @@ import com.pizidea.framework.beans.UserBean;
 import com.pizidea.framework.beans.WeatherBean;
 import com.pizidea.framework.beans.WeatherInfo;
 
+import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.POST;
 import retrofit.http.Path;
@@ -21,6 +22,10 @@ public interface WeatherService {
 
     @POST("/user/{uid}")
     boolean modifyUserInfo(@Path("uid") int userId);
+
+
+    @GET("/adat/sk/101010100.html")
+    void getWeather(Callback<WeatherInfo> callback);
 
 
 }

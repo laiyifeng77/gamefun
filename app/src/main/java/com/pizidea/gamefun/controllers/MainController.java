@@ -4,15 +4,19 @@ import android.util.Log;
 
 import com.google.common.base.Preconditions;
 import com.pizidea.framework.beans.WeatherBean;
+import com.pizidea.framework.beans.WeatherInfo;
 import com.pizidea.framework.network.AsyncExecutor;
 import com.pizidea.framework.network.NetworkCallable;
 import com.pizidea.framework.qualifiers.GeneralPurpose;
 import com.pizidea.framework.services.ApiClient;
+import com.pizidea.framework.services.WeatherService;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import retrofit.Callback;
 import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * desc your class
@@ -35,6 +39,30 @@ public class MainController {
         mExecutor.execute(task);
 
     }
+
+
+    public void doTaskAsync(){
+        ApiClient client = new ApiClient();
+        WeatherService service = client.weatherService();
+
+        service.getWeather(new Callback<WeatherInfo>() {
+            @Override
+            public void success(WeatherInfo info, Response response) {
+                Log.i(TAG,"-----weather.city=" + info.getWeatherinfo().getCity());
+                Log.i(TAG,"-----result.body=" + response.getBody().toString()+"---"+response.getStatus());
+
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+
+                Log.i(TAG,"-----onError=" + retrofitError.getBody());
+            }
+
+        });
+
+    }
+
 
     public void doTask(){
         execTask(new NetworkCallable<WeatherBean>() {

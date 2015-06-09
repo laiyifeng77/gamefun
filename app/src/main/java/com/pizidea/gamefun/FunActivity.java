@@ -19,7 +19,7 @@ public class FunActivity extends ActionBarActivity {
 
         mainController = ((PizApplication)(getApplication())).getMainController();
 
-        mainController.doTask();
+        mainController.doTaskAsync();
 
     }
 
