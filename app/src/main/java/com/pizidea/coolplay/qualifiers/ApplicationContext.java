@@ -1,4 +1,4 @@
-package com.pizidea.gamefun.qualifiers;
+package com.pizidea.coolplay.qualifiers;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -13,5 +13,5 @@ import javax.inject.Qualifier;
 @Qualifier
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-public @interface FileDirectory {
+public @interface ApplicationContext {
 }

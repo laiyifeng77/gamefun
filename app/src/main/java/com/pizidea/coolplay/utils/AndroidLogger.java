@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pizidea.gamefun.utils;
+package com.pizidea.coolplay.utils;
 
 import android.util.Log;
 

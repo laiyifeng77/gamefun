@@ -1,4 +1,4 @@
-package com.pizidea.gamefun.constants;
+package com.pizidea.coolplay.constants;
 
 /**
  * desc your class

@@ -1,14 +1,14 @@
-package com.pizidea.gamefun;
+package com.pizidea.coolplay;
 
 import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
 
 import com.pizidea.framework.utils.Injector;
-import com.pizidea.gamefun.Modules.ApplicationModule;
-import com.pizidea.gamefun.Modules.ContextProvider;
-import com.pizidea.gamefun.constants.AppConfig;
-import com.pizidea.gamefun.controllers.MainController;
+import com.pizidea.coolplay.Modules.ApplicationModule;
+import com.pizidea.coolplay.Modules.ContextProvider;
+import com.pizidea.coolplay.constants.AppConfig;
+import com.pizidea.coolplay.controllers.MainController;
 
 import javax.inject.Inject;
 

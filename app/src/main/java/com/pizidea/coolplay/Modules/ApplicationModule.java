@@ -1,18 +1,9 @@
-package com.pizidea.gamefun.Modules;
+package com.pizidea.coolplay.Modules;
 
-import android.accounts.AccountManager;
-import android.app.AlarmManager;
-import android.content.Context;
-import android.content.res.AssetManager;
-
-import com.google.common.base.Preconditions;
 import com.pizidea.framework.providers.UtilProvider;
-import com.pizidea.gamefun.PizApplication;
-
-import javax.inject.Singleton;
+import com.pizidea.coolplay.PizApplication;
 
 import dagger.Module;
-import dagger.Provides;
 
 /**
  * desc your class

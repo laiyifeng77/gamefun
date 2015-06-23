@@ -1,4 +1,4 @@
-package com.pizidea.gamefun.Modules;
+package com.pizidea.coolplay.Modules;
 
 import android.accounts.AccountManager;
 import android.app.AlarmManager;
@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 
 import com.google.common.base.Preconditions;
-import com.pizidea.gamefun.qualifiers.ApplicationContext;
-import com.pizidea.gamefun.qualifiers.FileDirectory;
+import com.pizidea.coolplay.qualifiers.ApplicationContext;
+import com.pizidea.coolplay.qualifiers.FileDirectory;
 
 import java.io.File;
 

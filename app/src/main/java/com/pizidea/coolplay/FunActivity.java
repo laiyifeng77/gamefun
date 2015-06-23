@@ -1,11 +1,11 @@
-package com.pizidea.gamefun;
+package com.pizidea.coolplay;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.pizidea.gamefun.controllers.MainController;
+import com.pizidea.coolplay.controllers.MainController;
 
 
 public class FunActivity extends ActionBarActivity {

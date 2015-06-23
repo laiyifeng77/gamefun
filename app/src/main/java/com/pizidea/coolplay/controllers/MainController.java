@@ -1,4 +1,4 @@
-package com.pizidea.gamefun.controllers;
+package com.pizidea.coolplay.controllers;
 
 import android.util.Log;
 
