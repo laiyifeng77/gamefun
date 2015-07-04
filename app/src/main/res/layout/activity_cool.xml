@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_insets"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_orange"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd = "0dp"
+        app:contentInsetRight = "0dp"
+        app:titleMarginTop="0dp"
+        app:titleMarginBottom="0dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"  >
+
+       <!-- <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/title_translucent">
+
+            <com.pizidea.coolplay.widget.tabbarview.TabBarView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tab_bar"
+                android:layout_width="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_height="56dp"
+
+                android:background="@color/red"
+                android:orientation="horizontal" >
+            </com.pizidea.coolplay.widget.tabbarview.TabBarView>
+
+
+
+            </RelativeLayout>-->
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:layout_gravity = "right"
+
+            android:background="@color/pull_refresh_color_2"
+            android:text="安安sd"/>-->
+
+        <com.pizidea.coolplay.widget.tabbarview.TabBarView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tab_bar"
+            android:layout_width="wrap_content"
+            android:gravity="right"
+            android:layout_height="56dp"
+            android:layout_gravity = "right"
+            android:orientation="horizontal" >
+        </com.pizidea.coolplay.widget.tabbarview.TabBarView>
+
+
+        </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.view.ViewPager
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.pizidea.coolplay.CoolActivity" />
+
+</LinearLayout>
+
+

@@ -1,0 +1,78 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <color name="green">#ff336699</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="red">#ffff0000</color>
+    <color name="light_gray">#5c666666</color>
+    <color name="color_activity_bg">#fff0f0f0</color>
+
+    <color name="blue">#4169E1</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+	<color name="divider_color">#e1e1e1</color>
+	<color name="color_theme">#ff67cdb7</color>
+	<color name="color_theme_light">#ff04c6a8</color>
+    <color name="theme_orange">#ffff3d00</color>
+	
+	<color name="title_translucent">#e01f5a9d</color>
+	<color name="setting_text">#666666</color>
+	
+	<color name="color_rich_colorpre">#99000000</color>
+	<color name="color_rich_color">#4D000000</color>
+	<color name="color_gift_name">#ff666666</color>
+	<color name="search_hint_color">#d9d9d9</color>
+	<color name="friend_friend_num">#b2b2b2</color>
+	<color name="LightBlack">#77000000</color>
+	<color name="WhiteColor">#ffffff</color>
+	<color name="gray">#cccccc</color>
+	<color name="bar_color">#2f87b9</color>
+	<color name="child_sign">#b2b2b2</color>
+	<color name="contact_menu_pre">#cccccc</color>
+	<color name="color_game_status_finished">#fe9393</color>
+	<color name="footer_bg_color">#f0f0f0</color>
+	<color name="time_count_red">#fa6f66</color>
+	<color name="comment_edit_hint">#b2b2b2</color>	
+	<color name="click_bg_color">#b3b3b3</color>
+	<color name="color_album_btn_bg_pre">#184f7f</color>
+	<color name="color_album_btn_bg_nor">#1f5a9d</color>
+	<color name="color_white_alpha55">#8cffffff</color>
+	<color name="black_55_translucent">#8c000000</color>
+	<color name="app_point_text">#d7d7d7</color>
+	<color name="picker_bg">#e8e8e8</color>
+    <color name="picker_text_808080">#808080</color>
+    <color name="activity_refresh_button">#f0f0f0</color>
+
+	<color name="bg_cc">#cccccc</color>
+    <color name="bg_f9">#f9f9f9</color>
+    
+    
+    <color name="text_c4">#c4c4c4</color>
+    <color name="text_66">#666666</color>
+    <color name="text_88">#888888</color>
+    <color name="text_80">#808080</color>
+    <color name="text_bb">#bbbbbb</color>
+    <color name="text_d9">#d9d9d9</color>
+    <color name="text_67cdb7">#67cdb7</color>
+    <color name="text_4e5c5b">#4e5c5b</color>
+    
+    <color name="color_game_datetime">#ff808080</color>
+    <color name="color_game_desc">#ff999999</color>
+    <color name="color_little_tran">#48ffffff</color>
+    
+    <color name="dialog_btn_bg_pre">#58ae9c</color>
+    <color name="dialog_btn_bg_nor">#67cdb7</color>
+    <color name="dialog_btn_bg_gray">#ace4d7</color>
+    
+    <color name="color_coin">#ff825b</color>
+    
+    <color name="pull_refresh_color_1">#67cdb7</color>
+    <color name="pull_refresh_color_2">#9b73e6</color>
+    <color name="pull_refresh_color_3">#ff9292</color>
+    <color name="list_bg_color_pre">#d9d9d9</color>
+    <color name="list_bg_color_nor">#fff</color>
+    <color name="commentor_name_color">#1c8f77</color>
+    <color name="comment_input_panel_bg">#f7f7f7</color>
+    <color name="text_btn_nor">#67cdb7</color>
+    <color name="text_btn_pre">#aeded3</color>
+    <color name="text_err_color">#cd6767</color>
+</resources>
