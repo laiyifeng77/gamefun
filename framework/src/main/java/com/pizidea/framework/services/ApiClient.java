@@ -21,11 +21,19 @@ public class ApiClient {
     private String userAccount;
     private String userPassSha1;
 
-    private RestAdapter restAdapter;
+    private GameService gameService;//活动接口
+    private UserService userService;//用户接口
 
-    public ApiClient(){
-        //do something
 
+    private ApiClient(){ }
+    private static ApiClient sInstance;
+    public static ApiClient getInstance(){
+        if(sInstance == null){
+            synchronized (ApiClient.class){
+                sInstance = new ApiClient();
+            }
+        }
+        return sInstance;
     }
 
     protected RestAdapter.Builder newRestAdapterBuilder(){
@@ -33,34 +41,30 @@ public class ApiClient {
         builder.setEndpoint(AppConfig.URL_HOST);//设置远程地址
         //builder.setConverter(new GsonConverter(GsonUtils.newInstance()));
         //builder.setClient(new OkClient(OkHttpUtils.getInstance(context)));
-        builder.setLogLevel(
-                AppConfig.DEBUG ? RestAdapter.LogLevel.FULL : RestAdapter.LogLevel.NONE);
+        builder.setLogLevel(AppConfig.DEBUG ? RestAdapter.LogLevel.FULL : RestAdapter.LogLevel.NONE);
 
         return builder;
     }
 
-    protected RestAdapter getRestAdapter(){
-        return restAdapter;
+
+    public GameService gameService(){
+        if(gameService == null){
+            gameService = newRestAdapterBuilder().build().create(GameService.class);
+        }
+        return gameService;
     }
 
     public UserService userService(){
-        return newRestAdapterBuilder().build().create(UserService.class);
+        if(userService == null){
+            userService =  newRestAdapterBuilder().build().create(UserService.class);
+        }
+        return userService;
     }
 
 
     public WeatherService weatherService(){
         return newRestAdapterBuilder().build().create(WeatherService.class);
-
     }
-
-
-
-
-
-    public void login(String userName,String password){
-        //
-    }
-
 
 
 }
