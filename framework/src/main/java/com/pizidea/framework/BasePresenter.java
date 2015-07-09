@@ -17,7 +17,7 @@ import javax.inject.Inject;
  * <b>desc your class</b><br/>
  * Created by yflai on 2015/7/4.
  */
-abstract class BasePresenter<U extends BasePresenter.Ui<UC>,UC>{
+public abstract class BasePresenter<U extends BasePresenter.Ui<UC>,UC>{
 
     public interface Ui<UC>{
 

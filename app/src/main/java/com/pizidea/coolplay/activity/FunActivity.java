@@ -1,10 +1,12 @@
-package com.pizidea.coolplay;
+package com.pizidea.coolplay.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.pizidea.coolplay.PizApplication;
+import com.pizidea.coolplay.R;
 import com.pizidea.coolplay.controllers.MainController;
 
 

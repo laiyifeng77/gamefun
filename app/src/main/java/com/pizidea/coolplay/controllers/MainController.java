@@ -42,7 +42,7 @@ public class MainController {
 
 
     public void doTaskAsync(){
-        ApiClient client = new ApiClient();
+        ApiClient client = ApiClient.getInstance();
         WeatherService service = client.weatherService();
 
         service.getWeather(new Callback<WeatherInfo>() {
@@ -74,7 +74,7 @@ public class MainController {
             @Override
             public WeatherBean doInBackground() {
                 Log.i(TAG,"-----doInBackground");
-                ApiClient client = new ApiClient();
+                ApiClient client = ApiClient.getInstance();
                 WeatherBean result = client.weatherService().fetchWeather().getWeatherinfo();
                 return result;
             }
