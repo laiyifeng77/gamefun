@@ -34,6 +34,7 @@ import android.widget.Toast;
 import com.pizidea.coolplay.R;
 import com.pizidea.coolplay.fragment.TimelineFragment;
 import com.pizidea.coolplay.fragment.TimelineFragment2;
+import com.pizidea.coolplay.fragment.TimelineFragment3;
 import com.pizidea.coolplay.widget.drawer.DrawerLayoutInstaller;
 import com.pizidea.coolplay.widget.tabbarview.TabBarView;
 
@@ -222,7 +223,7 @@ public class CoolActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class
             // below).
             if(position == 0){
-                return new TimelineFragment2();
+                return new TimelineFragment3();
             }
             return PlaceholderFragment.newInstance(position + 1);
         }
