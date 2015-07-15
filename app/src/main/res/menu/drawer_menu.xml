@@ -1,30 +1,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_tab1"
-            android:title="Home" />
-        <item
             android:id="@+id/nav_messages"
             android:icon="@drawable/ic_tab2"
-            android:title="Messages" />
+            android:title="消  息" />
         <item
             android:id="@+id/nav_friends"
             android:icon="@drawable/ic_tab3"
-            android:title="Friends" />
-        <item
-            android:id="@+id/nav_discussion"
-            android:icon="@drawable/ic_tab1"
-            android:title="Discussion" />
+            android:title="话  题" />
+
+
+        <item android:title="更  多">
+            <menu>
+                <item
+                    android:id="@+id/nav_discussion"
+                    android:icon="@drawable/ic_tab1"
+                    android:title="社  团" />
+
+                <item
+                    android:icon="@drawable/ic_tab3"
+                    android:title="探  索" />
+
+                <item
+                    android:icon="@drawable/ic_tab2"
+                    android:title="设  置" />
+
+
+            </menu>
+        </item>
+
     </group>
+
     <item android:title="Sub items">
         <menu>
             <item
-                android:icon="@drawable/ic_tab2"
+                android:icon="@drawable/ic_tab1"
                 android:title="Sub item 1" />
             <item
                 android:icon="@drawable/ic_tab3"
                 android:title="Sub item 2" />
         </menu>
     </item>
+
 </menu>

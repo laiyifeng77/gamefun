@@ -2,16 +2,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@color/theme_orange"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".FunActivity">
+    android:clickable="false"
+    android:background="@color/color_theme_light"
+    tools:context=".FunActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_drawer_top" />
 
-
-    <TextView android:text="@string/app_name"
+    <RelativeLayout
+        android:id="@+id/rl_avatar_panel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_major"
+        android:layout_marginTop="@dimen/spacing_major" >
+
+        <ImageView
+            android:id="@+id/imageview_drawer_icon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/avatar_def" />
+
+        <ImageView
+            android:id="@+id/iv_auth_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageview_drawer_icon"
+            android:layout_alignRight="@id/imageview_drawer_icon"
+            android:src="@drawable/ic_auth"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/btn_info_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_drawer_edit" />
+
+    <RelativeLayout
+        android:id="@+id/rl_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btn_auth"
+        android:layout_below="@id/rl_avatar_panel"
+        android:layout_marginLeft="@dimen/spacing_major"
+        android:layout_marginTop="58dp">
+
+        <TextView
+            android:id="@+id/imageview_drawer_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="王佳佳"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/iv_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageview_drawer_title"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/imageview_drawer_title"
+            android:src="@drawable/icon_boy"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_user_school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_major"
+        android:layout_marginTop="4dp"
+        android:text="桂林电子科技大学花江校区"
+        android:textColor="@color/white"
+        android:layout_below="@id/rl_user_name"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@id/btn_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="16dp"
+        android:paddingTop="20dp"
+        android:src="@drawable/iv_auth_nor" />
 
 </RelativeLayout>

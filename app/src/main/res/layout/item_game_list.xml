@@ -1,0 +1,140 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    app:cardCornerRadius="1dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <RelativeLayout android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout android:id="@+id/game_admin"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView android:id="@+id/iv_avatar"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/avatar_def"/>
+
+            <ImageView
+                android:id="@+id/iv_item_down"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_item_down" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_avatar"
+                android:layout_marginLeft="10dp" >
+
+            <TextView android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="文学社@林香儿"/>
+
+            <TextView android:id="@+id/tv_datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginTop="4dp"
+                android:textSize="14dp"
+                android:text="2014-03-21 15:33"/>
+
+                <TextView android:id="@+id/tv_game_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="4dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/red"
+                    android:text="★★★☆☆"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_below="@id/game_admin" >
+
+            <ImageView android:id="@+id/iv_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/game_pic" />
+
+            <TextView android:id="@+id/tv_game_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_corners_game_text"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:padding="4dp"
+                android:gravity="center_vertical"
+                android:text="北大"/>
+
+            <TextView android:id="@+id/tv_game_tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@id/tv_game_tag"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:padding="4dp"
+                android:gravity="center_vertical"
+                android:text="线上评选"/>
+
+            <TextView android:id="@+id/tv_game_tag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_corners_game_text"
+                android:layout_below="@id/tv_game_tag2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:padding="4dp"
+                android:gravity="center_vertical"
+                android:text="文学"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentBottom="true">
+
+                <TextView android:id="@+id/tv_game_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="#赞助#  ♣全国十大优秀在校社团评选活动"/>
+            </FrameLayout>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+

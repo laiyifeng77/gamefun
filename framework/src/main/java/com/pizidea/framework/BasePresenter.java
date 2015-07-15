@@ -80,6 +80,9 @@ public abstract class BasePresenter<U extends BasePresenter.Ui<UC>,UC>{
     protected final Display getDisplay() {
         return mDisplay;
     }
+    protected void setDisplay(Display display) {
+        mDisplay = display;
+    }
 
     protected int getId(U ui) {
         return ui.hashCode();
@@ -120,6 +123,15 @@ public abstract class BasePresenter<U extends BasePresenter.Ui<UC>,UC>{
             onUiAttached(ui);
             populateUi(ui);
         }
+    }
+
+    public synchronized final void detachUi(U ui) {
+        Preconditions.checkArgument(ui != null, "ui cannot be null");
+        Preconditions.checkState(mUis.contains(ui), "ui is not attached");
+        onUiDetached(ui);
+        ui.setCallbacks(null);
+
+        mUis.remove(ui);
     }
 
     protected final void updateDisplayTitle(String title) {

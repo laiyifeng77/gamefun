@@ -6,11 +6,11 @@ import java.util.Locale;
 import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.support.design.widget.NavigationView;
-import android.support.v13.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -32,6 +32,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pizidea.coolplay.R;
+import com.pizidea.coolplay.fragment.TimelineFragment;
+import com.pizidea.coolplay.fragment.TimelineFragment2;
 import com.pizidea.coolplay.widget.drawer.DrawerLayoutInstaller;
 import com.pizidea.coolplay.widget.tabbarview.TabBarView;
 
@@ -62,7 +64,7 @@ public class CoolActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cool);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("酷玩");
+        mToolbar.setTitle("趣活动");
 
         LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -75,7 +77,7 @@ public class CoolActivity extends AppCompatActivity {
 //        getSupportActionBar().setCustomView(v);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -113,6 +115,7 @@ public class CoolActivity extends AppCompatActivity {
     private View makeLeftView(){
 
         NavigationView navigationView = new NavigationView(this);
+        navigationView.setClickable(false);
         navigationView.inflateHeaderView(R.layout.drawer_header);
         navigationView.inflateMenu(R.menu.drawer_menu);
 
@@ -218,6 +221,9 @@ public class CoolActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class
             // below).
+            if(position == 0){
+                return new TimelineFragment2();
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 

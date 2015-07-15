@@ -25,49 +25,52 @@ import android.os.Bundle;
  */
 public interface Display {
 
-    public static final String FRAGMENT_TAG_RATE_MOVIE = "rate_movie";
-    public static final String FRAGMENT_TAG_CHECKIN_MOVIE = "checkin_movie";
-    public static final String FRAGMENT_TAG_TRAKT_CREDENTIALS_WRONG = "trakt_credentials_wrong";
+    public static final String FRAGMENT_TAG_COOL_PLAY = "cool_play";
+    public static final String FRAGMENT_TAG_QUAN = "quan_quan";
+    public static final String FRAGMENT_TAG_TOOLS = "tools";
 
-    public static final String PARAM_ID = "_id";
+    public void showSplash();//显示程序启动页
 
-    public void showLibrary();
+    public void showIndex();//显示主页面
 
-    public void showTrending();
+    public void showCoolPlay();//酷玩
+    public void showQuanQuan();//圈圈
+    public void showTools();//工具
 
-    public void showDiscover();
+    public void go2Pan();//我的酷盘
 
-    public void showWatchlist();
+    public void go2MyDirection();//我的风向标
 
-    public void showLogin();
+    public void go2CoolShop();//打开酷玩商城
 
-    public void startMovieDetailActivity(String movieId, Bundle bundle);
+    public void showLogin();//打开登录页
 
-    public void showMovieDetailFragment(String movieId);
+    public void startGameShowActivity(String gameId, Bundle bundle);
 
-    public void startMovieImagesActivity(String movieId);
+    //public void showMovieDetailFragment(String gameId);
 
-    public void showMovieImagesFragment(String movieId);
+   // public void startMovieImagesActivity(String movieId);
 
-    public void showSearchFragment();
+    //public void showMovieImagesFragment(String movieId);
 
-    public void showSearchMoviesFragment();
+    //public void showSearchFragment();
 
-    public void showSearchPeopleFragment();
+    //public void showSearchMoviesFragment();
 
-    public void showAboutFragment();
+    //public void showSearchPeopleFragment();
 
-    public void showLicencesFragment();
 
-    public void showRateMovieFragment(String movieId);
+    //public void showRateMovieFragment(String movieId);
 
-    public void closeDrawerLayout();
+    public void closeDrawerLayout();//关闭drawer
 
-    public boolean hasMainFragment();
+    //public boolean hasMainFragment();
 
-    public void startAddAccountActivity();
+    //public void startAddAccountActivity();
 
     public void startAboutActivity();
+
+    public void startSettingsActivity();
 
     public void setActionBarTitle(CharSequence title);
 
@@ -79,29 +82,27 @@ public interface Display {
 
     public void finishActivity();
 
-    public void showSettings();
+    //public void showRelatedMovies(String movieId);
 
-    public void showRelatedMovies(String movieId);
+    //public void showCastList(String movieId);
 
-    public void showCastList(String movieId);
+    //public void showCrewList(String movieId);
 
-    public void showCrewList(String movieId);
+    //public void showCheckin(String movieId);
 
-    public void showCheckin(String movieId);
-
-    public void showCancelCheckin();
+    //public void showCancelCheckin();
 
     public void startPersonDetailActivity(String id, Bundle bundle);
 
     public void showPersonDetail(String id);
 
-    public void showPersonCastCredits(String id);
+    //public void showPersonCastCredits(String id);
 
-    public void showPersonCrewCredits(String id);
+    //public void showPersonCrewCredits(String id);
 
-    public void showCredentialsChanged();
+    //public void showCredentialsChanged();
 
-    public void playYoutubeVideo(String id);
+    //public void playYoutubeVideo(String id);
 
     //public void setColorScheme(ColorScheme colorScheme);
 

@@ -212,7 +212,7 @@ public class MainPresenter extends BasePresenter<MainPresenter.MainPresenterUi,M
             public void addAccountRequested() {
                 Display display = getDisplay();
                 if (display != null) {
-                    display.startAddAccountActivity();
+                    //display.startAddAccountActivity();
                     display.closeDrawerLayout();
                 }
             }
@@ -253,19 +253,19 @@ public class MainPresenter extends BasePresenter<MainPresenter.MainPresenterUi,M
 
         switch (item) {
             case DISCOVER:
-                display.showDiscover();
+                //display.showDiscover();
                 break;
             case TRENDING:
-                display.showTrending();
+                //display.showTrending();
                 break;
             case LIBRARY:
-                display.showLibrary();
+               // display.showLibrary();
                 break;
             case WATCHLIST:
-                display.showWatchlist();
+                //display.showWatchlist();
                 break;
             case SEARCH:
-                display.showSearchFragment();
+                //display.showSearchFragment();
                 break;
         }
 
@@ -315,7 +315,7 @@ public class MainPresenter extends BasePresenter<MainPresenter.MainPresenterUi,M
     public boolean onSettingsButtonPressed() {
         Display display = getDisplay();
         if (display != null) {
-            display.showSettings();
+            //display.showSettings();
         }
         return true;
     }
