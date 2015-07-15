@@ -1,5 +1,6 @@
 package com.pizidea.coolplay.presenters;
 
+import com.google.common.base.Preconditions;
 import com.pizidea.framework.BasePresenter;
 
 import javax.inject.Inject;
@@ -10,7 +11,7 @@ import javax.inject.Singleton;
  * Created by yflai on 2015/6/28.
  */
 @Singleton
-public class GamePresenter extends BasePresenter<GamePresenter.MovieUi,GamePresenter.MovieUiCallbacks>{
+public class AboutPresenter extends BasePresenter<AboutPresenter.MovieUi,AboutPresenter.MovieUiCallbacks>{
 
     public interface MovieUi extends BasePresenter.Ui<MovieUiCallbacks> {
 
@@ -45,7 +46,7 @@ public class GamePresenter extends BasePresenter<GamePresenter.MovieUi,GamePrese
     }
 
     @Inject
-    public GamePresenter() {
+    public AboutPresenter() {
         //mStringFetcher = Preconditions.checkNotNull(stringFetcher, "stringFetcher cannot be null");
     }
 

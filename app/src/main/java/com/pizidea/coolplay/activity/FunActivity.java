@@ -2,26 +2,27 @@ package com.pizidea.coolplay.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pizidea.coolplay.PizApplication;
 import com.pizidea.coolplay.R;
-import com.pizidea.coolplay.controllers.MainController;
+import com.pizidea.coolplay.presenters.MainPresenter;
 
 
-public class FunActivity extends ActionBarActivity {
+public class FunActivity extends AppCompatActivity {
 
-    private MainController mainController;
+    private MainPresenter mMainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun);
 
-        mainController = ((PizApplication)(getApplication())).getMainController();
+        mMainPresenter = ((PizApplication)(getApplication())).getMainController();
 
-        mainController.doTaskAsync();
+        //mMainPresenter.doTaskAsync();
 
     }
 
@@ -46,5 +47,9 @@ public class FunActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+
     }
+
+
+
 }

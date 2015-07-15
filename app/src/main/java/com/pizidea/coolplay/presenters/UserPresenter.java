@@ -1,5 +1,6 @@
 package com.pizidea.coolplay.presenters;
 
+import com.google.common.base.Preconditions;
 import com.pizidea.framework.BasePresenter;
 
 import javax.inject.Inject;
@@ -10,9 +11,9 @@ import javax.inject.Singleton;
  * Created by yflai on 2015/6/28.
  */
 @Singleton
-public class GamePresenter extends BasePresenter<GamePresenter.MovieUi,GamePresenter.MovieUiCallbacks>{
+public class UserPresenter extends BasePresenter<UserPresenter.UserUi,UserPresenter.UserUiCallbacks>{
 
-    public interface MovieUi extends BasePresenter.Ui<MovieUiCallbacks> {
+    public interface UserUi extends BasePresenter.Ui<UserUiCallbacks> {
 
         //void showError(NetworkError error);
         void showLoadingProgress(boolean visible);
@@ -21,15 +22,15 @@ public class GamePresenter extends BasePresenter<GamePresenter.MovieUi,GamePrese
 
     }
 
-    public interface MovieUiCallbacks {
+    public interface UserUiCallbacks {
         String getUiTitle();
         void setHeaderScrollValue(float alpha);
     }
 
 
     @Override
-    protected MovieUiCallbacks createUiCallbacks(MovieUi ui) {
-        return new MovieUiCallbacks() {
+    protected UserUiCallbacks createUiCallbacks(UserUi ui) {
+        return new UserUiCallbacks() {
             @Override
             public String getUiTitle() {
                 return null;
@@ -44,8 +45,9 @@ public class GamePresenter extends BasePresenter<GamePresenter.MovieUi,GamePrese
 
     }
 
+
     @Inject
-    public GamePresenter() {
+    public UserPresenter(/*StringFetcher stringFetcher*/) {
         //mStringFetcher = Preconditions.checkNotNull(stringFetcher, "stringFetcher cannot be null");
     }
 
