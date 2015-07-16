@@ -3,7 +3,6 @@
     android:id="@+id/cardview"
     app:cardCornerRadius="1dp"
     app:cardBackgroundColor="@color/white"
-    android:layout_margin="8dp"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 

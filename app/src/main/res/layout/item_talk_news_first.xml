@@ -1,28 +1,60 @@
-<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
-
-
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview"
     app:cardCornerRadius="1dp"
     app:cardBackgroundColor="@color/white"
+    android:layout_margin="8dp"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
     <RelativeLayout android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
         android:paddingBottom="10dp"
         >
+
+        <RelativeLayout android:id="@+id/game_admin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView android:id="@+id/icon_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_auth"/>
+
+            <TextView android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/icon_v"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:textSize="14dp"
+                android:text="iknow"/>
+            <ImageView android:id="@+id/tv_see_more"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="4dp"
+                android:textSize="14dp"
+                android:src="@drawable/ic_item_down"
+                android:layout_centerVertical="true"
+                android:textColor="@color/color_theme_light" />
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/divider_color" />
+
+        </RelativeLayout>
 
         <RelativeLayout android:id="@+id/game_panel"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:paddingTop="6dp"
-            android:paddingLeft="6dp"
             android:layout_below="@id/game_admin"
             android:layout_centerHorizontal="true">
 
@@ -30,14 +62,14 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_avatar" />
+                android:src="@drawable/icon_avatar2" />
 
             <TextView android:id="@+id/tv_game_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/iv_game_post"
                 android:layout_marginTop="2dp"
-                android:text="如何破解校园一卡通免费打热水？"
+                android:text="开学季·新生报到的流程是什么？"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="8dp"
@@ -49,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/iv_game_post"
                 android:layout_alignParentBottom="true"
-                android:text="★10k     ❤4w"
+                android:text="★1000     ❤456"
                 android:textSize="14dp"
                 android:textColor="@color/theme_orange"
                 android:layout_marginBottom="1dp"
@@ -61,8 +93,9 @@
 
 
 
+
+
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
 
-    </FrameLayout>

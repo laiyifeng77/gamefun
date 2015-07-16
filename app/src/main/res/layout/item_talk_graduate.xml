@@ -1,9 +1,3 @@
-<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
-
-
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview"
@@ -15,42 +9,49 @@
     <RelativeLayout android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
         android:paddingBottom="10dp"
         >
 
+
         <RelativeLayout android:id="@+id/game_panel"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingTop="6dp"
-            android:paddingLeft="6dp"
-            android:layout_below="@id/game_admin"
+            android:layout_height="60dp"
+            android:layout_marginTop="6dp"
+            android:paddingRight="2dp"
             android:layout_centerHorizontal="true">
 
             <ImageView android:id="@+id/iv_game_post"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:scaleType="centerCrop"
+                android:layout_alignParentRight="true"
                 android:src="@drawable/icon_avatar" />
 
-            <TextView android:id="@+id/tv_game_name"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_game_post"
-                android:layout_marginTop="2dp"
-                android:text="如何破解校园一卡通免费打热水？"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="8dp"
+                android:layout_toLeftOf="@id/iv_game_post" >
 
-                />
+                <TextView android:id="@+id/tv_game_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="离开了桂林电子科技大学，有太多的不舍，终究逃不过毕业."
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    />
+
+            </FrameLayout>
 
             <TextView android:id="@+id/tv_game_tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_game_post"
                 android:layout_alignParentBottom="true"
-                android:text="★10k     ❤4w"
-                android:textSize="14dp"
+                android:text="阅读数 11k"
+                android:textSize="12dp"
                 android:textColor="@color/theme_orange"
                 android:layout_marginBottom="1dp"
                 android:layout_marginLeft="8dp"
@@ -61,8 +62,9 @@
 
 
 
+
+
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
 
-    </FrameLayout>

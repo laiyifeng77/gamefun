@@ -21,7 +21,7 @@
         android:cacheColorHint="@android:color/transparent"
         android:clickable="false"
         android:divider="@color/divider_color"
-        android:dividerHeight="1px"
+        android:dividerHeight="0px"
         android:fadingEdge="none"
         android:fastScrollEnabled="false"
         android:listSelector="@android:color/transparent"

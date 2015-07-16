@@ -33,7 +33,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="2dp"
                 android:textSize="14dp"
-                android:text="校园奇葩说"/>
+                android:text="毕业那些事"/>
             <ImageView android:id="@+id/tv_see_more"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
@@ -53,50 +53,45 @@
 
         <RelativeLayout android:id="@+id/game_panel"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_marginTop="6dp"
+            android:paddingRight="2dp"
             android:layout_below="@id/game_admin"
             android:layout_centerHorizontal="true">
 
             <ImageView android:id="@+id/iv_game_post"
-                android:layout_width="60dp"
-                android:layout_height="80dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:scaleType="centerCrop"
+                android:layout_alignParentRight="true"
                 android:src="@drawable/icon_avatar2" />
 
-            <TextView android:id="@+id/tv_game_name"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_game_post"
-                android:layout_marginTop="6dp"
-                android:text="文学社周年书评大赛"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_marginLeft="8dp"
+                android:layout_toLeftOf="@id/iv_game_post" >
 
-                />
+                <TextView android:id="@+id/tv_game_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="离开了桂林电子科技大学，有太多的不舍，终究逃不过毕业."
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    />
+
+            </FrameLayout>
+
 
             <TextView android:id="@+id/tv_game_tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_game_post"
                 android:layout_alignParentBottom="true"
-                android:text="北大  文学社  文艺青年  毕业季"
-                android:textSize="14dp"
+                android:text="阅读数 11k"
+                android:textSize="12dp"
                 android:textColor="@color/theme_orange"
                 android:layout_marginBottom="1dp"
-                android:layout_marginLeft="8dp"
-
-                />
-
-            <TextView android:id="@+id/tv_game_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/iv_game_post"
-                android:layout_above="@id/tv_game_tags"
-                android:layout_marginBottom="6dp"
-                android:text="明天"
-                android:textSize="14dp"
                 android:layout_marginLeft="8dp"
 
                 />
