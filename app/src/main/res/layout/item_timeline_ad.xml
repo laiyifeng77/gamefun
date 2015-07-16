@@ -10,14 +10,13 @@
     <RelativeLayout android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="6dp"
         >
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/game_pic" />
+            android:scaleType="fitXY"
+            android:src="@drawable/timeline_top_ad" />
 
     </RelativeLayout>
 

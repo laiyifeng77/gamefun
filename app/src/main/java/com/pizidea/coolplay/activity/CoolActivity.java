@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pizidea.coolplay.R;
+import com.pizidea.coolplay.fragment.TalkFragment;
 import com.pizidea.coolplay.fragment.TimelineFragment;
 import com.pizidea.coolplay.fragment.TimelineFragment2;
 import com.pizidea.coolplay.fragment.TimelineFragment3;
@@ -224,6 +225,8 @@ public class CoolActivity extends AppCompatActivity {
             // below).
             if(position == 0){
                 return new TimelineFragment3();
+            }else if(position == 1){
+                return new TalkFragment();
             }
             return PlaceholderFragment.newInstance(position + 1);
         }
