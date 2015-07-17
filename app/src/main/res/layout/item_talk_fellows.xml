@@ -33,7 +33,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="2dp"
                 android:textSize="14dp"
-                android:text="校园一角"/>
+                android:text="同学们"/>
             <ImageView android:id="@+id/tv_see_more"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
@@ -53,7 +53,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="320dp"
+            android:layout_height="90dp"
             android:orientation="vertical"
             android:layout_marginTop="6dp"
             android:paddingLeft="6dp"
@@ -87,26 +87,6 @@
                     android:layout_alignParentBottom="true"
                     android:src="@drawable/icon_avatar2" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:showDividers="middle"
-                android:divider="@drawable/shape_divider"
-                android:orientation="horizontal"
-                android:layout_below="@id/game_admin" >
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:layout_alignParentBottom="true"
-                    android:src="@drawable/bg_drawer_top" />
-
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -114,6 +94,14 @@
                     android:scaleType="centerCrop"
                     android:layout_alignParentBottom="true"
                     android:src="@drawable/icon_avatar" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/icon_avatar2" />
 
 
             </LinearLayout>

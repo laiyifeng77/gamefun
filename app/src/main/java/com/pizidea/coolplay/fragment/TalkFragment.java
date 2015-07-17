@@ -39,7 +39,7 @@ public class TalkFragment extends Fragment {
     private final String FROM_COMMENT_CONTENT = "comment_content";
     private final String FROM_CONTENT_CLICK = "content_click";
 
-    private int[] resId = {R.layout.item_talk_news_first,R.layout.item_talk_news,R.layout.item_talk_photos,R.layout.item_talk_graduate_first,R.layout.item_talk_graduate,R.layout.item_talk_channels_first,R.layout.item_talk_channels};
+    private int[] resId = {R.layout.item_talk_news_first,R.layout.item_talk_news,R.layout.item_talk_fellows,R.layout.item_talk_photos,R.layout.item_talk_graduate_first,R.layout.item_talk_graduate,R.layout.item_talk_channels_first,R.layout.item_talk_channels};
 
     private String[] from = {FROM_COMENTER_HEAD, FROM_COMMENTER_NAME,
             FROM_COMMENTER_CLICK, FROM_COMMENT_TIME,
@@ -96,6 +96,7 @@ public class TalkFragment extends Fragment {
         fromMap.put(resId[4], from);
         fromMap.put(resId[5], from);
         fromMap.put(resId[6], from);
+        fromMap.put(resId[7], from);
 
         Map<Integer, int[]> toMap = new HashMap<Integer, int[]>();
         toMap.put(resId[0], to);
@@ -105,6 +106,7 @@ public class TalkFragment extends Fragment {
         toMap.put(resId[4], to);
         toMap.put(resId[5], to);
         toMap.put(resId[6], to);
+        toMap.put(resId[7], to);
 
         mAdapter = new SocialStreamAdapter(getActivity(), data, resId, fromMap, toMap, 32, 16);
 
@@ -126,20 +128,24 @@ public class TalkFragment extends Fragment {
                 //map.put(FROM_COMMENTER_NAME,"校园一角");
             }else if(i == 3){
                 map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,2);
-                map.put(FROM_COMMENTER_NAME,"校园一角");
+                map.put(FROM_COMMENTER_NAME,"同学们");
             }else if(i == 4){
                 map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,3);
+                map.put(FROM_COMMENTER_NAME,"校园一角");
+
+            }else if(i == 5){
+                map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,4);
                 map.put(FROM_COMMENTER_NAME,"毕业那些事");
                 map.put(FROM_COMMENT_CONTENT,"离开了桂林电子科技大学，有太多的不舍，终究逃不过毕业.");
-            }else if( i < 8){
-                map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,4);
-                map.put(FROM_COMMENT_CONTENT,"为什么你对生活如此留恋？因为你爱你的校园");
-            }else if(i == 8){
+            }else if( i < 9){
                 map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,5);
+                map.put(FROM_COMMENT_CONTENT,"为什么你对生活如此留恋？因为你爱你的校园");
+            }else if(i == 9){
+                map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,6);
                 map.put(FROM_COMMENTER_NAME,"推荐频道");
                 map.put(FROM_COMMENT_CONTENT,"十一教那些事 HOT");
             }else{
-                map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,6);
+                map.put(SocialStreamAdapter.CommonDataKey.ITEM_TYPE,7);
                 map.put(FROM_COMMENT_CONTENT,"北师大夜话");
             }
             data.add(map);
